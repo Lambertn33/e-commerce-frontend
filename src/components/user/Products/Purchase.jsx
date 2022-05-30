@@ -1,4 +1,4 @@
-import React , {useEffect, useState} from 'react'
+import React , {useState} from 'react'
 import Navbar from '../../reusable/Navbar'
 import auth from '../../services/authService'
 import { useQuery , useMutation,useQueryClient } from 'react-query'
@@ -101,7 +101,7 @@ export default function Purchase() {
                             <form onSubmit={handleSubmit}>
                                 {
                                     hasError && 
-                                    <div class="alert alert-danger alert-dismissible" role="alert">{errorMessage}<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+                                   <FormErrorMessage errorMessage={errorMessage} />
                                 }
                                 <FormInput 
                                     label="Product Price"

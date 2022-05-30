@@ -8,12 +8,11 @@ import * as productsService from '../../services/productsService'
 export default function Products() {
   const user = auth.getCurrentUser()
   const [products , setProducts] = useState([]);
-  const {data , isLoading, isError} = useQuery('products',productsService.getAllProducts,{
+  const {isLoading, isError} = useQuery('products',productsService.getAllProducts,{
     onSuccess:products =>{
       setProducts(products.data)
     }
   })
- console.log(user)
   return (
     <div>
         <Navbar user={user}/>

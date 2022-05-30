@@ -21,7 +21,7 @@ export default function Register() {
             setIsLoading(true)
             await auth.register(names , email , password)
             await auth.login(email , password)
-            navigate('/user/products')
+            window.location.href ="/user/products"
         } catch (error) {
           setIsLoading(false)
           if(error && error.response.status !== 200){
